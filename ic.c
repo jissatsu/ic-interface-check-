@@ -59,8 +59,7 @@ int main( int argc, char **argv ) {
         (opts->iface != NULL && ((opts->check == 0 && opts->set == NULL) ||
         (opts->check && opts->set != NULL))) ) {
             show_usage();
-            free( opts->iface );
-            return -1;
+            free( opts->iface ); return -1;
     }
     
     else if ( opts->iface != NULL && opts->check ) {
@@ -68,7 +67,6 @@ int main( int argc, char **argv ) {
             print_iface_info( ic_info );
             free_ic_info( &ic_info );
         }
-        free( opts->iface );
     }
     
     else if ( opts->iface != NULL && opts->set != NULL ) {
@@ -80,6 +78,8 @@ int main( int argc, char **argv ) {
                 set_if_run_flags( &sock, opts->iface, if_up );
                 break;
         }
+        free( opts->iface );
+        free( opts->set );
     }
     close( sock ); return 0;
 }
