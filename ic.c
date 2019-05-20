@@ -65,6 +65,7 @@ int main( int argc, char **argv ) {
     else if ( opts->iface != NULL && opts->check ) {
         if ( iface_info( &sock, opts->iface, &ic_info ) == 0 ) {
             print_iface_info( ic_info );
+            free( opts->iface );
             free_ic_info( &ic_info );
         }
     }
