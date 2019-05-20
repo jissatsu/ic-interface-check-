@@ -1,5 +1,5 @@
-#define if_up   1
-#define if_down 0
+#define if_up   0x01
+#define if_down 0x00
 
 struct options {
     char *iface;
