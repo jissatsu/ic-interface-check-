@@ -55,7 +55,7 @@ int main( int argc, char **argv ) {
     }
 
     /* cannot use the -c option in combination with -s or -i solely */
-    if ( (!opts->check && !opts->set && !opts->check) || 
+    if ( (!opts->check && !opts->set ) || 
         (opts->iface != NULL && ((opts->check == 0 && opts->set == NULL) ||
         (opts->check && opts->set != NULL))) ) {
             show_usage();
