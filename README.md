@@ -1,4 +1,5 @@
 # ic-interface-check-
+### Usage
 
 ```
 ./ic -i eth0 -c
